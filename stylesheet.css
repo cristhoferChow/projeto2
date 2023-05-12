@@ -1,0 +1,118 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #262626;
+}
+
+ul{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li{
+  list-style: none;
+  font-family: arial;
+  font-size: 3em;
+  letter-spacing: 15px;
+  text-shadow: none;
+  animation: animate 1s infinite linear;
+}
+
+@keyframes animate{
+  0%{
+      color: #484848;
+      text-shadow: none;
+  }
+  18%{
+      color: #484848;
+      text-shadow: none;
+  }
+  20%{
+      color: #fa7f72 ;
+      text-shadow: 0 0 7px #fa7f72 ,
+          0 0 20px #e9967a ;
+  }
+  30%{
+      color: #484848;
+      text-shadow: none;
+  }
+  35%{
+      color: #fa7f72 ;
+      text-shadow: 0 0 7px #fa7f72 ,
+          0 0 20px #e9967a ;
+  }
+  70%{
+      color: #484848;
+      text-shadow: none;
+  }
+  85%{
+      color: #fa7f72 ;
+      text-shadow: 0 0 7px #fa7f72 ,
+          0 0 20px #e9967a ;
+  }
+  90%{
+      color: #484848;
+      text-shadow: none;
+  }
+  100%{
+      color: #484848;
+      text-shadow: none;
+  }
+}
+
+ul li:nth-last-child(1){
+  animation-delay: .2s;
+}
+ul li:nth-last-child(2){
+  animation-delay: .4s;
+}
+ul li:nth-last-child(3){
+  animation-delay: .6s;
+}
+ul li:nth-last-child(4){
+  animation-delay: .8s;
+}
+ul li:nth-last-child(5){
+  animation-delay: 1.0s;
+}
+
+.container{
+  position: absolute;
+  top: 30%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 50%;
+}
+
+.item{
+  position: absolute;
+  background-color: transparent;
+  width: calc(var(--i) * 2.5vmin);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: .9vmin solid rgb(0, 200, 255);
+  transform-style: preserve-3d;
+  transform: rotateX(70deg) translateZ(50px);
+  animation: my-move 4s ease-in-out calc(var(--i) * 0.08s) infinite;
+  box-shadow: 0px 0px 15px rgb(124, 124, 124),
+      inset 0px 0px 15px rgb(124, 124, 124);
+}
+
+@keyframes my-move{
+  0%,
+  100%{
+      transform: rotateX(70deg) translateZ(50px) translateY(0px);
+      filter: hue-rotate(0deg);
+  }
+  50%{
+      transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+      filter: hue-rotate(180deg);
+  }
+}
